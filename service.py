@@ -1,13 +1,15 @@
-from models import ToDo
-task_id = 1
+from models import Task
+class TaskService:
+    def __init__(self):
+        self._tasks: list[Task] = []
+        self._task_id = 1
 
-tasks = []
+    def add_task(self, name: str, description: str | None = None) -> Task:
+        task = Task(name, self._task_id, description)
+        self._tasks.append(task)
+        self._task_id += 1
+        return task
 
-def add_task(tasks, task:ToDo):
-    tasks.appent(task)
-    task_id += 1
-    return task
 
-
-def show_all_tasks():
-    return tuple(tasks)
+    def get_all_tasks(self):
+        return tuple(self._tasks)

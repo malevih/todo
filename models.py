@@ -7,8 +7,11 @@ class TaskStatus(StrEnum):
     ABANDONED = "abandoned"
 
 @dataclass
-class ToDo:
+class Task:
     name: str
     id:int | None = None
     description: str | None = None
     state: TaskStatus = TaskStatus.IN_PROGRESS
+
+    def __str__(self):
+        return f"{self.id}: [{self.name}] {self.description} -> {self.state}"
