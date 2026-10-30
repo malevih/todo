@@ -1,14 +1,14 @@
 from dataclasses import dataclass
 from enum import StrEnum
 
-class Check(StrEnum):
+class TaskStatus(StrEnum):
     IN_PROGRESS = "in progress"
     DONE = "done"
     ABANDONED = "abandoned"
 
 @dataclass
-class TODO:
+class ToDo:
     name: str
     id:int | None = None
-    description: str | None = ""
-    state: Check = Check.IN_PROGRESS
+    description: str | None = None
+    state: TaskStatus = TaskStatus.IN_PROGRESS

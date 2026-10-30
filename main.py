@@ -1,7 +1,7 @@
-from models import TODO
+from models import ToDo
 
 def main():
-    t = TODO(name="Molk")
+    t = ToDo(name="Molk")
     print(t)
 
 
