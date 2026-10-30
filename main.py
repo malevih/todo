@@ -1,5 +1,8 @@
+from models import TODO
+
 def main():
-    print("hello world")
+    t = TODO(name="Molk")
+    print(t)
 
 
 if __name__ == "__main__":
